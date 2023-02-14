@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href='<c:url value="/template/web/css/pages/component/header.css"/>' rel="stylesheet">
+
 </head>
 <body>
 <header class="header-section">
@@ -177,5 +177,6 @@
 	</div>
 	<!-- Header Menu Bar End -->
 </header>
+
 </body>
 </html>

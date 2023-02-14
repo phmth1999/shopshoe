@@ -29,5 +29,7 @@ public interface IProductRepository extends JpaRepository<ProductEntity, Long>{
 
 	Page<ProductEntity> findByBrandAndCategoryAndPriceBetween(CategoryEntity category, BrandEntity brand, double startPrice, double endPrice, Pageable pageable);
 
+	List<ProductEntity> findByNameStartsWith(String term);
+
 
 }

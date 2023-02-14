@@ -31,5 +31,21 @@
 	<%@include file="/WEB-INF/views/pages/web/include/changePasswordContent.jsp"%>
 	
 	<%@include file="/WEB-INF/views/pages/web/include/homeFooter.jsp"%>
+	
+	<!-- Js Library Begin -->
+	<script src='<c:url value="/template/web/js/jquery-3.3.1.min.js" />'></script>
+	<script src='<c:url value="/template/web/js/bootstrap.min.js" />'></script>
+	<script src='<c:url value="/template/web/js/jquery-ui.min.js" />'></script>
+	<script src='<c:url value="/template/web/js/jquery.countdown.min.js" />'></script>
+	<script src='<c:url value="/template/web/js/jquery.nice-select.min.js"/>'></script>
+	<script src='<c:url value="/template/web/js/jquery.zoom.min.js"/>'></script>
+	<script src='<c:url value="/template/web/js/jquery.dd.min.js"/>'></script>
+	<script src='<c:url value="/template/web/js/jquery.slicknav.js"/>'></script>
+	<script src='<c:url value="/template/web/js/owl.carousel.min.js"/>'></script>
+	<!-- Js Library End -->
+	
+	<!-- Js Begin -->
+	<script src='<c:url value="/template/web/js/pages/main.js"/>'></script>
+	<!-- Js End -->
 </body>
 </html>

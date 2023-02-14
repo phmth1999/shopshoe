@@ -3,6 +3,7 @@ package com.phmth.services.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.phmth.entities.SlideEntity;
@@ -10,6 +11,7 @@ import com.phmth.repositories.ISlideRepository;
 import com.phmth.services.ISlideService;
 
 @Service
+@Qualifier("slideService")
 public class SlideServiceImpl implements ISlideService {
 	@Autowired
 	private ISlideRepository slideRepository;

@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -30,12 +31,15 @@ public class ProductController {
 	private static final Logger logger = LoggerFactory.getLogger(ProductController.class);
 	
 	@Autowired
+	@Qualifier("productService")
 	private IProductService productService;
 	
 	@Autowired
+	@Qualifier("categoryService")
 	private ICategoryService categoryService;
 	
 	@Autowired
+	@Qualifier("brandService")
 	private IBrandService brandService;
 	
 	private Sort checkSortBy(String nameSort) {

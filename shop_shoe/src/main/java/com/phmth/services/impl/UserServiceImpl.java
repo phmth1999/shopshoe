@@ -5,6 +5,7 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -24,6 +25,7 @@ import com.phmth.utils.CompareUtil;
 import com.phmth.utils.CheckNoEmptyUtil;
 
 @Service
+@Qualifier("userService")
 public class UserServiceImpl implements IUserService {
 	@SuppressWarnings("unused")
 	private static final Logger logger = LoggerFactory.getLogger(AccountController.class);

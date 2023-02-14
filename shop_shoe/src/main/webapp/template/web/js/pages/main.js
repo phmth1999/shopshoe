@@ -3,13 +3,13 @@
 	/*Search auto*/
 	 const firstPath = location.pathname.split('/')[1];
 	 $("#inputSearch").autocomplete({
-		    source: '/'+firstPath+'/'+'search',
+		    source: '/'+firstPath+'/'+'api/search',
 		    create: function() {
 		      $(this).data('ui-autocomplete')._renderItem = function(ul, item) {
 		    		  return $('<li>')
-		    		  .append('<a href="/'+firstPath+'/product/' + item.id + '" style="display:flex;justify-content: left;align-items: center;">'
+		    		  .append('<a href="/'+firstPath+'/product-shop/' + item.id + '" style="display:flex;justify-content: left;align-items: center;">'
 		        		  +'<div>'
-		        		  +'<img style="height: 100px;width: 100px;" class="icon" src="/'+firstPath+'/template/web/img/products/' + item.img + '" />'
+		        		  +'<img style="height: 100px;width: 100px;" class="icon" src="/'+firstPath+'/template/web/img/products/' + item.image + '" />'
 		        		  +'</div>'
 		        		  +'<div style="margin-left: 20px;font-size: 16px;">'
 		        		  + item.name

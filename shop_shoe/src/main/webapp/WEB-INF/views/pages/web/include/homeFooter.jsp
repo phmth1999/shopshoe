@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href='<c:url value="/template/web/css/pages/component/footer.css"/>' rel="stylesheet">
+
 </head>
 <body>
 <div class="backtop">
@@ -67,6 +67,6 @@
 	</div>
 </footer>
 
-<script src='<c:url value="/template/web/js/pages/main.js"/>'></script>
+<%-- <script src='<c:url value="/template/web/js/pages/main.js"/>'></script> --%>
 </body>
 </html>

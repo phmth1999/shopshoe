@@ -6,6 +6,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
 import com.phmth.dto.FormSearch;
+import com.phmth.dto.ProductDto;
 import com.phmth.entities.ProductEntity;
 
 public interface IProductService {
@@ -24,5 +25,7 @@ public interface IProductService {
 	ProductEntity editProduct(ProductEntity product);
 
 	void deleteProduct(long id);
+
+	List<ProductDto> getProductBySearchName(String term);
 
 }

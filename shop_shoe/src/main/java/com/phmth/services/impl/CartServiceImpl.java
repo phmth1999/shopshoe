@@ -3,12 +3,14 @@ package com.phmth.services.impl;
 import java.util.HashMap;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.phmth.dto.CartDto;
 import com.phmth.repositories.ICartDao;
 import com.phmth.services.ICartService;
 @Service
+@Qualifier("cartService")
 public class CartServiceImpl implements ICartService{
 	@Autowired
 	private ICartDao cartDao;

@@ -1,15 +1,18 @@
 package com.phmth.services.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.phmth.dto.FormSearch;
+import com.phmth.dto.ProductDto;
 import com.phmth.entities.BrandEntity;
 import com.phmth.entities.CategoryEntity;
 import com.phmth.entities.ProductEntity;
@@ -18,6 +21,7 @@ import com.phmth.repositories.ICategoryRepository;
 import com.phmth.repositories.IProductRepository;
 import com.phmth.services.IProductService;
 @Service
+@Qualifier("productService")
 public class ProductServiceImpl implements IProductService{
 	@SuppressWarnings("unused")
 	private static final Logger logger = LoggerFactory.getLogger(ProductServiceImpl.class);
@@ -126,6 +130,25 @@ public class ProductServiceImpl implements IProductService{
 	@Override
 	public void deleteProduct(long id) {
 		productRepository.deleteById(id);
+	}
+
+	@Override
+	public List<ProductDto> getProductBySearchName(String term) {
+		List<ProductEntity> productEntity = productRepository.findByNameStartsWith(term);
+		List<ProductDto> listProductDto = new ArrayList<>();
+		for (ProductEntity entity : productEntity) {
+			ProductDto productDto = new ProductDto();
+			productDto.setId(entity.getId());
+			productDto.setName(entity.getName());
+			productDto.setPrice(entity.getPrice());
+			productDto.setImage(entity.getImage());
+			productDto.setQuantity(entity.getQuantity());
+			productDto.setStatus(entity.getStatus());
+			productDto.setBrandID(entity.getBrand().getId());
+			productDto.setCategoryID(entity.getCategory().getId());
+			listProductDto.add(productDto);
+		}
+		return listProductDto;
 	}
 
 }
